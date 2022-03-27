@@ -20,9 +20,7 @@ public class AdminPanel extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getApplicationContext(), AddParking.class);
 
-                startActivity(intent);
 
             }
         });

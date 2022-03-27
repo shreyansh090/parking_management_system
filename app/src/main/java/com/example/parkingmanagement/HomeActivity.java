@@ -62,9 +62,8 @@ public class HomeActivity extends AppCompatActivity {
 
         Button btnUserProfile = findViewById(R.id.btnUserProfile);
 
-        if(ContextCompat.checkSelfPermission(this, Manifest.permission.READ_SMS)
-                != PackageManager.PERMISSION_GRANTED)
-        {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_SMS)
+                != PackageManager.PERMISSION_GRANTED) {
             // Permission is not granted
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_SMS}, 10);
         }
@@ -112,32 +111,33 @@ public class HomeActivity extends AppCompatActivity {
         });
 
     }
-
-    class GetCities extends AsyncTask<Void, Void, List<String>>{
-
-        @Override
-        protected List<String> doInBackground(Void... voids) {
-
-            List <String> cities = new ArrayList<String>();
-
-            try {
-                Class.forName("com.mysql.jdbc.Driver");
-                Connection connection = DriverManager.getConnection("jdbc:mysql://parking.cxxwlprzsfrp.us-east-1.rds.amazonaws.com:3306/parking", "admin", "rajurand");
-                Statement statementLogin = connection.createStatement();
-
-                String queryCities = String.format("select distinct(cityName) from parkingLot");
-                ResultSet resultSetCities = statementLogin.executeQuery(queryCities);
-
-                while(resultSetCities.next())
-                {
-                    String city = resultSetCities.getString(1);
-                    cities.add(city);
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-
-            return cities;
-        }
-    }
 }
+
+//    class GetCities extends AsyncTask<Void, Void, List<String>>{
+//
+//        @Override
+//        protected List<String> doInBackground(Void... voids) {
+//
+//            List <String> cities = new ArrayList<String>();
+//
+//            try {
+//                Class.forName("com.mysql.jdbc.Driver");
+//                Connection connection = DriverManager.getConnection("jdbc:mysql://parking.cxxwlprzsfrp.us-east-1.rds.amazonaws.com:3306/parking", "admin", "rajurand");
+//                Statement statementLogin = connection.createStatement();
+//
+//                String queryCities = String.format("select distinct(cityName) from parkingLot");
+//                ResultSet resultSetCities = statementLogin.executeQuery(queryCities);
+//
+//                while(resultSetCities.next())
+//                {
+//                    String city = resultSetCities.getString(1);
+//                    cities.add(city);
+//                }
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//            }
+//
+//            return cities;
+//        }
+//    }
+//}

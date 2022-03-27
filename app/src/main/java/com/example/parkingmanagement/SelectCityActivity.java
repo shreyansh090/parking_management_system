@@ -63,7 +63,7 @@ public class SelectCityActivity extends AppCompatActivity {
 
             try {
                 Class.forName("com.mysql.jdbc.Driver");
-                Connection connection = DriverManager.getConnection("jdbc:mysql://parking.cxxwlprzsfrp.us-east-1.rds.amazonaws.com:3306/parking", "admin", "rajurand");
+                Connection connection = DriverManager.getConnection("jdbc:mysql://humaraserver.mysql.database.azure.com:3306/parking?useSSL=true", "harshit", "Parking@123");
                 Statement statementLogin = connection.createStatement();
 
                 String queryCities = String.format("select distinct(cityName) from parkingLot");
@@ -92,11 +92,11 @@ public class SelectCityActivity extends AppCompatActivity {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                    Intent intent = new Intent(getApplicationContext(), SelectBuildingActivity.class);
-
-                    intent.putExtra("city", strings.get(position));
-                    intent.putExtra("userId", userId);
-                    startActivity(intent);
+//                    Intent intent = new Intent(getApplicationContext(), SelectBuildingActivity.class);
+//
+//                    intent.putExtra("city", strings.get(position));
+//                    intent.putExtra("userId", userId);
+//                    startActivity(intent);
 
                 }
             });

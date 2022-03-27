@@ -129,7 +129,7 @@ public class Register extends AppCompatActivity {
                 try {
 
                     Class.forName("com.mysql.jdbc.Driver");
-                    connection = DriverManager.getConnection("jdbc:mysql://parking.cxxwlprzsfrp.us-east-1.rds.amazonaws.com:3306/parking?useSSL=false", "admin", "rajurand");
+                    connection = DriverManager.getConnection("jdbc:mysql://humaraserver.mysql.database.azure.com:3306/parking?useSSL=true", "harshit", "Parking@123");
                     statementCheck = connection.createStatement();
                     statementCheck1 = connection.createStatement();
 
@@ -206,7 +206,7 @@ public class Register extends AppCompatActivity {
 
                     try {
 
-                        connection1 = DriverManager.getConnection("jdbc:mysql://parking.cxxwlprzsfrp.us-east-1.rds.amazonaws.com:3306/parking?useSSL=false", "admin", "rajurand");
+                        connection1 = DriverManager.getConnection("jdbc:mysql://humaraserver.mysql.database.azure.com:3306/parking?useSSL=true", "harshit", "Parking@123");
                         statementCreateNew = connection1.createStatement();
                         String queryInsert = String.format("INSERT into users " +
                                         "VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s');" ,

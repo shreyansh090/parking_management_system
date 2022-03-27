@@ -107,7 +107,7 @@ public class LoginActivity extends AppCompatActivity {
             try {
                 Class.forName("com.mysql.jdbc.Driver");
 
-                connection = DriverManager.getConnection("jdbc:mysql://parking.cxxwlprzsfrp.us-east-1.rds.amazonaws.com:3306/parking", "admin", "rajurand");
+                connection = DriverManager.getConnection("jdbc:mysql://humaraserver.mysql.database.azure.com:3306/parking?useSSL=true", "harshit", "Parking@123");
                 statementLogin = connection.createStatement();
 
                 String queryUserExists = String.format("select * from users WHERE email='%s'", email);
