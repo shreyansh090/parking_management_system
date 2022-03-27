@@ -39,10 +39,10 @@ public class UserProfile extends AppCompatActivity {
         btnEditProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intentEditProfile = new Intent(getApplicationContext(), EditProfile.class);
-                intentEditProfile.putExtra("userId", userId);
-
-                startActivity(intentEditProfile);
+//                Intent intentEditProfile = new Intent(getApplicationContext(), EditProfile.class);
+//                intentEditProfile.putExtra("userId", userId);
+//
+//                startActivity(intentEditProfile);
             }
         });
 
